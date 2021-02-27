@@ -81,7 +81,7 @@ const submit = () => {
   navigator.geolocation.getCurrentPosition(pos => {
     coords = pos.coords;
     if (!("Notification" in window)) {
-      alert("This browser does not support desktop notifications");
+      alert("This browser does not support notifications :(");
     }
   
     // Let's check whether notification permissions have already been granted
