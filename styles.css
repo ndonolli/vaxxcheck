@@ -42,10 +42,6 @@ a.button:hover {
     margin: 10px;
 }
 
-.top-space {
-    height: 20vh;
-}
-
 body {
     background-color: #272838;
     color: #F9F8F8;
@@ -77,10 +73,13 @@ a {
     text-align: center;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) {
     .main {
         padding-left: 5vw;
         padding-right: 5vw;
+    }
+    .top-space {
+        height: 10vh;
     }
 } 
 
@@ -88,5 +87,8 @@ a {
     .main {
         padding-left: 20vw;
         padding-right: 20vw;
+    }
+    .top-space {
+        height: 20vh;
     }
 }
