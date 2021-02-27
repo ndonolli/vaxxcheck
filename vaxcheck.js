@@ -61,17 +61,20 @@ const availabilityCheck = response => {
   }
 }
 
+const request = () => {
+  let body = buildBody();
+  let opts = buildOpts(body);
+  fetch(url, opts)
+    .then(data => data.json())
+    .then(availabilityCheck);
+}
+
 const checkLoop = () => {
   const button = document.getElementById('check');
   button.innerHTML = "Checking every minute..."
   button.classList.remove('button');
-  setInterval(() => { 
-    let body = buildBody();
-    let opts = buildOpts(body);
-    fetch(url, opts)
-      .then(data => data.json())
-      .then(availabilityCheck);
-  }, 60000);
+  request();
+  setInterval(request, 60000);
 }
 
 let firstMsg = "I'll send a notification like this if an opening pops up!";
