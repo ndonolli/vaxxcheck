@@ -21,6 +21,11 @@ a.button:hover {
         display:block;
         margin:0.2em auto;
     }
+
+    .main {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
 }
 
 .container {
@@ -65,14 +70,23 @@ a {
     color: #7E7F9A;
 }
 
-.main {
-    padding-left: 20vw;
-    padding-right: 20vw
-}
-
 .bottom {
     position: fixed;
     bottom: 0;
     padding: 10px;
     text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+    .main {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+} 
+
+@media only screen and (min-width: 600px) {
+    .main {
+        padding-left: 20vw;
+        padding-right: 20vw;
+    }
 }
