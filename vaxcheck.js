@@ -35,6 +35,18 @@ const buildOpts = body => ({
   body: JSON.stringify(body)
 });
 
+const toggleSuccess = isSuccess => {
+  const success = document.getElementById('success-msg');
+  const body = document.body;
+  if (isSuccess) {
+    success.classList.remove('hidden');
+    body.classList = 'success';
+  } else {
+    success.classList.add('hidden');
+    body.classList = 'checking';
+  }
+}
+
 const availabilityCheck = response => {
   if (response.appointmentsAvailable) {
     console.log('found availability!');
@@ -43,15 +55,17 @@ const availabilityCheck = response => {
       event.preventDefault(); // prevent the browser from focusing the Notification's tab
       window.open('https://www.walgreens.com/findcare/vaccination/covid-19/location-screening', '_blank');
     }
+    toggleSuccess(true);
   } else {
     console.log('no availability found');
+    toggleSuccess(false);
   }
 }
 
 const checkLoop = () => {
   const button = document.getElementById('check');
   button.innerHTML = "Checking every minute..."
-  button.classList = 'large-font';
+  button.classList.remove('button');
   setInterval(() => { 
     let body = buildBody();
     let opts = buildOpts(body);

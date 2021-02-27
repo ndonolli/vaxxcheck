@@ -7,7 +7,7 @@
     <script src="vaxcheck.js"></script>
   </head>
 
-  <body>
+  <body class="checking">
     <div class="main">
       <div class="top-space"></div>
       <div class="container">
@@ -28,6 +28,13 @@
       </div>
       <div class="container large-space">
         <a id="check" class="button large-font" onclick="submit()">Start</a>
+      </div>
+      <div id="success-msg" class="container large-font hidden">
+          <p>Last I checked, there was availability! <a
+            href="https://www.walgreens.com/findcare/vaccination/covid-19/location-screening"
+            target="_blank"
+            >Go check!</a
+          > </p>
       </div>
     </div>
     <div class="bottom">

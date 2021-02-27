@@ -42,9 +42,17 @@ a.button:hover {
     margin: 10px;
 }
 
-body {
+.checking {
     background-color: #272838;
     color: #F9F8F8;
+}
+
+.success {
+    background-color: #E0EFDE;
+    color: #272838;
+}
+
+body {
     font-family: Verdana, sans-serif;
 }
 
@@ -91,4 +99,8 @@ a {
     .top-space {
         height: 20vh;
     }
+}
+
+.hidden {
+    display: none;
 }
